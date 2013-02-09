@@ -42,10 +42,31 @@ package com.rtl.utils
 				
 				soundNames.push( name );
 				soundList[ name ].channel.stop();
+				
 			}
 			else
 			{
 				throw( new Error( "The name '" + name + "' already exists for a sound name." ) )
+			}
+		}
+		
+		/**
+		 * Removes a sound from the list of sounds
+		 * @param	name	The name of the sound you want to remove.
+		 */
+		public static function removeSound( name:String ):void{
+			if( soundList[name] ) {
+				
+				soundNames.splice(soundNames.indexOf( name ), 1); // Remove the name from soundNames array
+				
+				stopSound(name); // Stop the sound
+				
+				soundList[name] = null; // Null out the value
+				
+				delete soundList[name]; // Delete the 'name' property from the soundList array object
+				
+			} else {
+				throw (new Error("The name '" + name + "' does not exist in the sound list."))
 			}
 		}
 		
