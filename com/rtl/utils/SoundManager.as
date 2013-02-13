@@ -175,6 +175,9 @@ package com.rtl.utils
 					setTransform( s, currTransform );
 				}
 			}
+
+			var event:SoundEvent = new SoundEvent((m) ? SoundEvent.SOUND_MUTED : SoundEvent.SOUND_UNMUTED);
+			dispatchEvent(event); // don't pass in any sound names, as this pertains to all sounds
 		}
 		
 		/**
@@ -206,6 +209,9 @@ package com.rtl.utils
 					setTransform( s, currTransform );
 				}
 			}
+
+			var event:SoundEvent = new SoundEvent((m) ? SoundEvent.MUSIC_MUTED : SoundEvent.MUSIC_UNMUTED);
+			dispatchEvent(event); // don't pass in any sound names, as this pertains to all sounds
 		}
 		
 		static public function get soundVol():Number
