@@ -8,6 +8,7 @@ package com.rtl.utils
 	/**
 	 * ...
 	 * @author RTLShadow
+	 * SoundEvent.as in com/rtl/utils is REQUIRED for this class to work.
 	 */
 	public class SoundManager
 	{
